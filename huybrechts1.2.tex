@@ -1,0 +1,33 @@
+\documentclass[10pt,letter]{article}
+\usepackage{amsmath,amssymb,breqn,enumitem,fullpage,graphicx,setspace,mathtools,pst-node,stmaryrd,tikz-cd}
+\onehalfspacing
+\usepackage{fullpage}
+
+\begin{document}
+\begin{center} 
+{\bf Huybrechts 1.2} \\
+Holly Mandel 01/14/2018
+\end{center}
+
+\paragraph*{1.2.2} Take $\alpha = L^i \tilde{\alpha}$ for $\alpha \in P^{k-2i}$ and $\beta = L^j \tilde{\beta}$ for $\beta \in P^{k-2j}$. Say $i > j$. Now
+\[ (\alpha,\beta) =  L^i \tilde{\alpha} \wedge L^j \tilde{\beta} \wedge \omega^{n-k} = \tilde{\alpha} \wedge \tilde{\beta} \wedge \omega^{n-k+i+j}.\]
+Since $i > j$, $i + j \geq 2j + 1$. Therefore $n-k+i+j \geq n-(k-2j)+1$. But by Proposition 1.2.30, $\tilde{\beta} \in \text{Ker }L^{n-(k-2j)+1}$. Therefore 
+\[ (\alpha,\beta) = \tilde{\alpha} \wedge L^{n-k+i+j}(\tilde{\beta}) = 0.\] This proves that the decomposition $\Lambda^k V^{\ast} = \oplus L^i P^{k-2i}$ is orthogonal with respect to the Hodge-Riemann pairing.
+
+On the other hand, say $i \neq j$ and $p+q = k- 2i$ and $p' +q' = k-2j$. Take $\gamma = L^i \tilde{\gamma}$ for $\tilde{\gamma} \in P^{p,q}$ and $\delta = L^i \tilde{\delta}$ for $\tilde{\delta} \in P^{p,q}$. If $i \neq j$, then we cannot have $(p,q) = (q',p')$, for this would imply $p+q = p'+q'$. But 
+\[ (\gamma,\delta) = L^i\tilde{\gamma} \wedge L^j \tilde{\delta} \wedge \omega^{n-k} = \tilde{\gamma} \wedge \tilde{\delta} \wedge \omega^{n-k+i+j}.\]
+This last term is zero by bidegree. 
+
+\paragraph*{1.2.3} Let $z_1,\bar{z}_1,...,z_n,\bar{z}_n$ be the ordered basis for $V_{\mathbb{C}}$ constructed in the discussion after Lemma 1.2.17. Let $i_1,...i_p$ and $j_1,...,j_q$ be ordered collections of indices for $p,q < n$, let $s_1,...,s_{n-p},t_1,...,t_{n-q}$ be the complementary sets of indices, and let $\sigma$ be the sign of the permutation
+\[ z_1,\bar{z}_1,...,z_n,\bar{z}_n \rightarrow \bar{z}_{i_1},...,\bar{z}_{i_p},z_{j_1},...,z_{j_q},\bar{z}_{s_1},  ...  , \bar{z}_{s_{n-p}} , z_{t_1} , ... ,z_{t-{n-q}}.\]  Now $\ast$ is characterized by the relation \[ \alpha \wedge \ast \bar{\beta} = \langle \alpha, \beta \rangle_{\mathbb{C}} \cdot \text{Vol}. \] 
+Since powers of the $z_i, \bar{z}_i$ form an orthonormal basis with respect to $\langle \cdot , \cdot \rangle_{\mathbb{C}}$, this relation implies that if $\beta = z_{i_1} \wedge ... \wedge z_{i_p} \wedge z_{j_1} \wedge ... \wedge z_{j_q}$, then $\ast \bar{z}_{i_1} \wedge ... \wedge \bar{z}_{i_p} \wedge z_{j_1} \wedge ... \wedge z_{j_q} = \sigma \bar{z}_{s_1} \wedge ... \wedge \bar{z}_{s_p} \wedge ... \wedge z_{t_1} \wedge ... \wedge z_{t_q}.$ By the complex linearity of $\ast$, this implies that $\ast(\Lambda^{p,q}V^{\ast}) \subseteq \Lambda^{n-q,n-p}V^{\ast}$. 
+
+FINISH
+
+\paragraph*{1.2.4} The product of two primitive forms is not necessarily primitive. For choose a basis $z_1,\bar{z}_1,...,z_n,\bar{z}_n$ for $V$ as above. Then $z_1$ and $\bar{z}_1$ are both primitive. For $\ast z_1$ has degree $n-1$, so $L(\ast z_1)$ has degree $n+1$ and is therefore zero, which implies that $\Lambda(z_1) = \ast^{-1} \circ L \circ \ast(z_1) = 0$. A similar argument shows that $\Lambda(\bar{z}_1) = 0$. 
+
+On the other hand, $\ast (z_1 \wedge \bar{z}_1) = z_2 \wedge \bar{z}_2 \wedge ... \wedge z_n \wedge \bar{z}_n$, so 
+\[ \ast (z_1 \wedge \bar{z}_1) = \frac{i}{2} (\sum_{i=1}^n z_1 \wedge \bar{z}_1) \wedge z_2 \wedge \bar{z}_2 \wedge ... \wedge z_n \wedge \bar{z}_n = \frac{i}{2} z_1 \wedge \bar{z}_1 \wedge ... \wedge z_n \wedge \bar{z}_n.\] 
+Therefore $\ast^{-1} \circ L \circ \ast(z_1 \wedge \bar{z}_1) \neq 0$, so $z_1 \wedge \bar{z}_1$ is not primitive. 
+
+\end{document}
