@@ -9,6 +9,13 @@
 Holly Mandel 01/14/2018
 \end{center}
 
+\paragraph*{1.2.1} 
+Let $(V, \langle \cdot , \cdot \rangle)$ be a $4-$dimensional Euclidean space and fix a vector $v \in V$ of unit length and an orientation of $V$. Say that $I$ is a compatible almost-complex structure. Then we must have \[ \langle v, Iv \rangle = \langle Iv, I^2 v \rangle = - \langle Iv, v \rangle = - \langle v, Iv \rangle, \] so $Iv$ is orthogonal to $v$. Also, since $I$ is orthogonal with respect to $\langle \cdot , \cdot \rangle$, we must have that $\Vert Iv \Vert = 1$. 
+
+Now the orthogonal complement to $v$ is a three-dimensional Euclidean space, so the set of unit-length vectors in this complement is identified with $S^2$: $Iv \in S^2$. It is easily checked that $I$ stabilizes $(v \oplus Iv)^{\perp}$, so $I$ restricts to an almost-complex structure on this two-dimensional Euclidean space, and the restriction of $I$ is compatible with the restriction of $\langle \cdot , \cdot \rangle$. By the discussion in Huybrechts (Example 1.2.12), the only remaining choice is of an orientation for this vector space. One choice gives a positive orientation and one a negative orientation to the basis $[v,Iv,w,Iw]$ for any $w \in (v \oplus Iv)^{\perp}$. (The choice of $w$ does not matter, since if we had chosen $w' = aw + b Iw$, then the transition map from $w, Iw \rightarrow w', Iw'$ is seen to have determinant $a^2 + b^2$.) Therefore we can characterize $I$ by (1.) the choice of $Iv \in S^2$ for the fixed vector $v$ and (2.) the sign of the orientation $+/-$. This gives a map from the set of almost complex structures to two copies of $S^2$. 
+
+On the other hand, any choice of $v' \in S^2 \subset v^{\perp}$ and orientation gives a compatible almost complex structure by defining $Iv = v'$, $Iv' = -v$, and then giving the orthogonal complement the almost complex structure with the chosen orientation. For it is easily checked that $I^2z = -z$ for $z \in \lbrace v, v', w, Iw \rbrace$, which implies that $I^2 = -\text{Id}$. It is easy to see also that the restriction of $I$ is orthogonal on the two subspaces $v \oplus v'$ and its complement, and these subspaces are $I$-invariant, so $I$ is orthogonal on $V$. Therefore $I$ defined this way is a compatible almost-complex structure.  
+
 \paragraph*{1.2.2} Take $\alpha = L^i \tilde{\alpha}$ for $\alpha \in P^{k-2i}$ and $\beta = L^j \tilde{\beta}$ for $\beta \in P^{k-2j}$. Say $i > j$. Now
 \[ (\alpha,\beta) =  L^i \tilde{\alpha} \wedge L^j \tilde{\beta} \wedge \omega^{n-k} = \tilde{\alpha} \wedge \tilde{\beta} \wedge \omega^{n-k+i+j}.\]
 Since $i > j$, $i + j \geq 2j + 1$. Therefore $n-k+i+j \geq n-(k-2j)+1$. But by Proposition 1.2.30, $\tilde{\beta} \in \text{Ker }L^{n-(k-2j)+1}$. Therefore 
@@ -20,9 +27,17 @@ This last term is zero by bidegree.
 
 \paragraph*{1.2.3} Let $z_1,\bar{z}_1,...,z_n,\bar{z}_n$ be the ordered basis for $V_{\mathbb{C}}$ constructed in the discussion after Lemma 1.2.17. Let $i_1,...i_p$ and $j_1,...,j_q$ be ordered collections of indices for $p,q < n$, let $s_1,...,s_{n-p},t_1,...,t_{n-q}$ be the complementary sets of indices, and let $\sigma$ be the sign of the permutation
 \[ z_1,\bar{z}_1,...,z_n,\bar{z}_n \rightarrow \bar{z}_{i_1},...,\bar{z}_{i_p},z_{j_1},...,z_{j_q},\bar{z}_{s_1},  ...  , \bar{z}_{s_{n-p}} , z_{t_1} , ... ,z_{t-{n-q}}.\]  Now $\ast$ is characterized by the relation \[ \alpha \wedge \ast \bar{\beta} = \langle \alpha, \beta \rangle_{\mathbb{C}} \cdot \text{Vol}. \] 
-Since powers of the $z_i, \bar{z}_i$ form an orthonormal basis with respect to $\langle \cdot , \cdot \rangle_{\mathbb{C}}$, this relation implies that if $\beta = z_{i_1} \wedge ... \wedge z_{i_p} \wedge z_{j_1} \wedge ... \wedge z_{j_q}$, then $\ast \bar{z}_{i_1} \wedge ... \wedge \bar{z}_{i_p} \wedge z_{j_1} \wedge ... \wedge z_{j_q} = \sigma \bar{z}_{s_1} \wedge ... \wedge \bar{z}_{s_p} \wedge ... \wedge z_{t_1} \wedge ... \wedge z_{t_q}.$ By the complex linearity of $\ast$, this implies that $\ast(\Lambda^{p,q}V^{\ast}) \subseteq \Lambda^{n-q,n-p}V^{\ast}$. 
+Since powers of the $z_i, \bar{z}_i$ form an orthonormal basis with respect to $\langle \cdot , \cdot \rangle_{\mathbb{C}}$, this relation implies that if $\beta = z_{i_1} \wedge ... \wedge z_{i_p} \wedge z_{j_1} \wedge ... \wedge z_{j_q}$, then $\ast \bar{z}_{i_1} \wedge ... \wedge \bar{z}_{i_p} \wedge z_{j_1} \wedge ... \wedge z_{j_q} = \sigma \bar{z}_{s_1} \wedge ... \wedge \bar{z}_{s_p} \wedge ... \wedge z_{t_1} \wedge ... \wedge z_{t_q}.$ By the complex linearity of $\ast$, this implies that $\ast(\Lambda^{p,q}V^{\ast}) \subseteq \Lambda^{n-q,n-p}V^{\ast}$. This fact, along with linearity, gives the identity $\ast \, \Pi^{p,q} = \Pi^{n-q,n-p} \, \ast.$ 
 
-FINISH
+It is easy to check the identity $[L,I] = 0$ on basis elements of this form, using the fact that $\omega$ has bidegree $(1,1)$. Finally, if $v = z_{i_1} \wedge ... \wedge z_{i_p} \wedge \bar{z}_{j_1} \wedge ... \wedge \bar{z}_{j_q}$, then
+\begin{dmath*}
+[\Lambda,I]v = (\ast^{-1} \circ L \circ \ast \circ I - I \circ \ast^{-1} \circ L \circ \ast)  v
+= i^{p-q} \ast^{-1} \circ L (\ast v) - I \circ  \ast^{-1}  \circ L(\ast v) 
+= i^{p-q} \ast^{-1} \omega \wedge (\ast v) - I \ast^{-1} \omega \wedge (\ast v) 
+= i^{p-q} \ast^{-1} \omega \wedge (\ast v) - i^{(n-(n-p+1))-(n-(n-q+1))} \ast^{-1} \omega \wedge (\ast v) 
+= 0. 
+\end{dmath*}
+Therefore, by linearity, $[\Lambda, I] = 0$. 
 
 \paragraph*{1.2.4} The product of two primitive forms is not necessarily primitive. For choose a basis $z_1,\bar{z}_1,...,z_n,\bar{z}_n$ for $V$ as above. Then $z_1$ and $\bar{z}_1$ are both primitive. For $\ast z_1$ has degree $n-1$, so $L(\ast z_1)$ has degree $n+1$ and is therefore zero, which implies that $\Lambda(z_1) = \ast^{-1} \circ L \circ \ast(z_1) = 0$. A similar argument shows that $\Lambda(\bar{z}_1) = 0$. 
 
@@ -30,4 +45,11 @@ On the other hand, $\ast (z_1 \wedge \bar{z}_1) = z_2 \wedge \bar{z}_2 \wedge ..
 \[ \ast (z_1 \wedge \bar{z}_1) = \frac{i}{2} (\sum_{i=1}^n z_1 \wedge \bar{z}_1) \wedge z_2 \wedge \bar{z}_2 \wedge ... \wedge z_n \wedge \bar{z}_n = \frac{i}{2} z_1 \wedge \bar{z}_1 \wedge ... \wedge z_n \wedge \bar{z}_n.\] 
 Therefore $\ast^{-1} \circ L \circ \ast(z_1 \wedge \bar{z}_1) \neq 0$, so $z_1 \wedge \bar{z}_1$ is not primitive. 
 
+\paragraph{1.2.5}  We show that $\Omega = \omega_J + i \omega_K$ is a $(2,0)$ form by showing that if $\bar{z} \in V^{0,1}$, then $\Omega(\bar{z},w)$ vanishes for all $w \in V_{\mathbb{C}}$. For
+\[ \omega_J(\bar{z},w) + i \omega_K(\bar{z},w) = \langle J \bar{z},w \rangle + i \langle K \bar{z},w \rangle = \langle J \bar{z},w \rangle - i \langle JI \bar{z},w \rangle = \langle J \bar{z},w \rangle - i(-i) \langle J \bar{z},w \rangle = 0.\]
+
+%	 First note that \[ I(Kz) = I(-JIz) = I(-J(iz)) = -i(Kz), \] so $Kz \in V^{0,1}$. Now \[ \omega_J(z,\bar{z}) + i \omega_K(z,\bar{z}) = \langle Jz + i Kz,\bar{z} \rangle = \langle Jz + i (-JI)z,\bar{z} \rangle  = 2\langle Jz,\bar{z} \rangle.\] 
+%But \[ \langle Jz, \bar{z} \rangle = \langle -I^2Jz, \bar{z} \rangle = \langle -IKz,\bar{z} \rangle = 0 \] by the bidegree of $Kz$ and the fact that $\omega_I$ is a $1,1$-form.
+
+\paragraph{1.2.6}
 \end{document}
