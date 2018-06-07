@@ -10,7 +10,35 @@ Holly Mandel 05/11/2018
 \end{center}
 
 \paragraph*{1.1.1} If $f$ is such a holomorphic function, then so is $g = e^{if}$. But $\vert g \vert \leq 1$ because  $\Re(if) = - \Im(f)  < 0$. Therefore $g$ is constant, so $f$ is constant.  
-\paragraph*{1.1.2} 
+\paragraph*{1.1.2} This follows from the same property for holomorphic functions of a single variable. 
 \paragraph*{1.1.3} If $f: U \subseteq \mathbb{C}^n \rightarrow \mathbb{C}$ has a local maximum at $(p_1,...,p_n)$ in the interior of $U$, then the holomorphic function $z \mapsto f(z,p_2,...,p_n)$ has a local maximum in the interior of its domain, a contradiction. The same idea is used to prove the identity principle.
-\paragraph*{1.1.4} 
+\paragraph*{1.1.4} Omitted.
+\paragraph*{1.1.5} 
+\paragraph*{1.1.6} 
+\paragraph*{1.1.7} Omitted.
+\paragraph*{1.1.8} To see that $W = U \setminus Z(f)$ is dense, take $x \in Z(f)$. Since $f$ is nontrivial, we can change coordinates so that $x = 0$ and the Weierstrass polynomial theorem applies, and write $f_0(z) = h(z) g_{(z_2,...,z_n)}(z_1)$ for $g$ a Weiestrass polynomial and $h(0) \neq 0$. Then the vanishing set of $f$ is the vanishing set of $(z_1,...,z_n) \mapsto g_{(z_2,...,z_n)}(z_1)$ in an neighborhood of $0$. But $g_{0}(z_1) = z_1^d$ for $d > 0$, so there are points arbitrarily close to $0$ such that $f$ does not vanish. 
+
+Now suppose $W$ is disconnected, so $W = W_1 \coprod W_2$ with each $W_i$ closed and open. Define $h: W \rightarrow  \mathbb{C}$ that sends $h(x) = 0$ if $x \in W_1$ and $h(x) = 1$ if $x \in W_2$. Clearly $h$ is holomorphic and bounded, so by the Riemann extension theorem it extends to a holomorphic function on $U$. 
+
+This produces an obvious contradiction if any point in $Z(f)$ is in the closure of both $W_1$ and $W_2$. Otherwise, $Z(f)$ breaks into two disjoint subsets $Z_1$ and $Z_2$ with $U = (W_1 \cup Z_1) \coprod (W_2 \cup Z_2)$ and $\overline{W_i} = W_i \cup Z_i$. This contradicts the fact that $U$ is connected. 
+\paragraph*{1.1.9} Say that $f$ is not the zero function. Locally, \[ h_i \vert_{U_i\setminus S} \cdot f\vert_{U_i\setminus S}  = g_i \vert_{U_i\setminus S} \] 
+for holomorphic functions $g_i$ and $h_i$ defined on $U_i \subseteq U$. Now by connectedness, $g_i$ is not the zero function either, so the zero locus of $g_i$ is nowhere dense. to For $Z(g_i)$ is closed, so if it contains an open set, then $g_i = 0$ by the identity theorem. 
+
+Let $S' = \cup_{i} Z(g_i)$. Then $S' \cup S$ is nowhere dense, and I claim that an inverse of $f$ exists on $U \setminus (S \cup S')$. For $f_i \neq 0$ on this domain, so $p_i \equiv f_i^{-1}$ is a well-defined function, and locally 
+\[ g_i \vert_{U_i\setminus (S \cup S')} \cdot  p_i\vert_{U_i\setminus (S \cup S')} = h_i \vert_{U_i\setminus (S \cup S')}.\] 
+
+I claim that $K(U)$ is isomorphic to the field of fractions of $\mathcal{O}_{\mathbb{C}^n,z}$ for each $z \in U$. For take $f \in K(U)$. On some neighborhood $U$ of $z$, $h \vert_U \cdot f\vert_U = g\vert_U$. Send $f \rightarrow g h^{-1}$ in $(\mathcal{O}_{\mathbb{C}^n,z})_{(0)}$. This map is well-defined because if $h'\vert_U \cdot f\vert_U = g'\vert_U$ in a neighborhood of $z$, then $h'g = g'h$, since the values of $h,h',g,g'$ on $U \setminus S$ determine the values on $U$. 
+
+This map is injective, for $f \equiv 0$ near $z$ if and only if $g \equiv 0$ near $z$. It is surjective because the ratio of any two nonzero holomorphic functions defines a meromorphic function, since the vanishing sets of holomorphic functions are nowhere dense (identity theorem). 
+\paragraph*{1.1.10} The map $\mathcal{O}(U) \rightarrow \mathcal{O}_{\mathbb{C}^n,0}$ is the projection to the stalk.
+
+Let $p$ be the prime ideal of functions vanishing at the origin. Then $\mathcal{O}(U)/p$ injects into the residue field of  $\mathcal{O}_{\mathbb{C}^n,0}$, that is,$ \mathcal{O}_{\mathbb{C}^n,0}/m$, where $m$ is the maximal ideal of stalks that vanish at $0$. Both well-definedness and injectivity are clear. However, $p$ is not maximal, because it is contained in the ideal of functions than vanish anywhere in $U$. This shows that the map is not an isomorphism, so surjectivity fails. It therefore must hold that the image fails to contain the inverses of some functions that do not vanish at $0$.
+ 
+\paragraph*{1.1.11} OTHER DIRECTION. Let $X = V(z_1) \cup V(z_1-1)$. Then $X$ is a reducible variety, but locally it is given by one of the equations $z_1 = 0$ or $z_1 = 1$, so its germs are irreducible.
+
+\paragraph*{1.1.12} Say otherwise that $0$ is the only zero of $f$. Write $g(z_1) = f(z_1,\epsilon,0,...,0)$. Then $g(z_1)$ has no zeros.  But USE ARGUMENT PRINCIPLE, INTEGER. SMALL EPSILON.
+
+The second result follows from the first, 
+
+\paragraph*{1.1.14} I claim that the image of $f$ is the analytic set $V(y^2-x^2(x-1))$. It is clear that $Im(f) \subseteq V(y^2-x^2(x+1))$. Conversely, say $(p,q) \in V(y^2-x^2(x-1))$. If $x \neq 0$ and $y \neq 0$, define $z$ to be a square roots of $p+1$. Now $q$ is one of the two square rootes of $\sqrt{p^2(p-1)}$. Since $z^3-z$ and $(-z)^3-(-z)$ are distinct and both satisfy this equation, $q$ must be one of these. Therefore $(p,q)$ is equal to either $f(z)$ or $f(-z)$. If $p = 0$, then $q = 0$ so $(p,q) = f(1)$. Finally if $q = 0$ but $p \neq 0$ then $p = -1$ and then $(p,q) = f(0)$.  
 \end{document}

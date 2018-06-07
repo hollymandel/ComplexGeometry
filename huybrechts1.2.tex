@@ -51,5 +51,25 @@ Therefore $\ast^{-1} \circ L \circ \ast(z_1 \wedge \bar{z}_1) \neq 0$, so $z_1 \
 %	 First note that \[ I(Kz) = I(-JIz) = I(-J(iz)) = -i(Kz), \] so $Kz \in V^{0,1}$. Now \[ \omega_J(z,\bar{z}) + i \omega_K(z,\bar{z}) = \langle Jz + i Kz,\bar{z} \rangle = \langle Jz + i (-JI)z,\bar{z} \rangle  = 2\langle Jz,\bar{z} \rangle.\] 
 %But \[ \langle Jz, \bar{z} \rangle = \langle -I^2Jz, \bar{z} \rangle = \langle -IKz,\bar{z} \rangle = 0 \] by the bidegree of $Kz$ and the fact that $\omega_I$ is a $1,1$-form.
 
-\paragraph{1.2.6}
+\paragraph{1.2.7} Let $x_i,y_i$ be a symplectic basis for $V^{\ast}$, so $y_i = Jx_i$.  Let $a_{ij} = x^i \wedge x^j$, $b_{ij} = y^i \wedge y^j$, and $c_{ij} = x^i \wedge y^j$. Then $a_{ij}$, $b_{ij}$ for $1 \leq i < j \leq n$ and $a_{ij}$ for $1 \leq i,j \leq n$ form a basis for $V^{\ast}$. Let \[ T(\alpha,\beta) =\frac{ \alpha \wedge \beta \wedge\omega^{n-2}}{\text{Vol}}.\]  Then we can compute  \[ T(a_{ij},a_{kl}) = T(b_{ij},b_{kl})  = T(a_{ij},c_{kl}) = T(b_{ij},c_{kl}) = 0,\] \[T(a_{ij},b_{kl}) = (n-2)! \delta_{ik} \delta_{jl},\] \[ T(c_{ij},c_{kl}) = \begin{cases}  (n-2)! &\text{if } i = l \text{ and } j = k \text{ or } {i = j \neq k = l} \\ 0 &\text{otherwise} \end{cases} \]
+Therefore a matrix representation of $T$ is block-diagonal with 
+\begin{enumerate}
+\item $\binom{n}{2}$ blocks of the form $\bigg( \begin{array}{cc} 0 & (n-2)! \\ (n-2)! & 0 \end{array} \bigg)$ corresponding to $c_{ij},c_{ji}$ for $i \neq j$. Each block has signature $(1,1)$.
+\item one $n \times n$ block of the form $J-I$, where $J$ is a matrix of all ones, corresponding to $c_{ii}$. This block has signature $(1,n-1)$.
+\item $n^2$ blocks of the form $\bigg( \begin{array}{cc} 0 & (n-2)! \\ (n-2)! & 0 \end{array} \bigg)$ corresponding to the $a_{ij},b_{ij}$ for all $i,j$. Each block has signature $(1,1)$.
+\end{enumerate}
+Since these blocks account for $3n^2$ basis vectors, there are also $n^2$ zeros.
+
+
+\paragraph{1.2.8}  The formula is checked by induction on $r$. For $r = 0$, the result is trivial, since $\alpha$ is primitive ($\Lambda \alpha = 0$).  For the inductive step  \begin{dmath*} \Lambda^s L^r \alpha = \Lambda^{s-1} \Lambda L^r \alpha = \Lambda^{s-1} r(k-n+r-1) L^{r-1}\alpha = (r(k-n+r-1)) \times ( r(r-1)...((r-1)-(s-1)+1)(n-k-(r-1)+1)...(n-k-(r-1)+(s-1))) L^{(r-1)-(s-1)}\alpha = r(r-1)....(r-s+1)(n-k-r+1)...(n-k-r+s)L^{r-s}\alpha.
+\end{dmath*}
+We have used Corollary 1.2.28 and the fact that $\Lambda \alpha = 0$.
+
+\paragraph{1.2.10} With respect to the dual basis $x_i,...,x_n,y_i,...,y_n$, $\omega$ takes the coordinate form 
+\[ \omega = \sum_{i=1}^n x_i \wedge y_i. \]
+This is because the wedge products of pairs of these basis vectors form an orthonormal basis of $\Lambda^2 V^{\ast}$, and \[ \omega(x_i,Ix_j) = g(x_i,x_j) = \delta_{ij}, \ \ \  \omega(x_i,x_j) = g(Ix_i,x_j) = 0, \ \ \  \omega(y_i,y_j) = g(Ix_i,x_j) = 0.\] 
+Write \[ \alpha = \sum_{1 \leq i < j \leq n} a_{ij} x^i \wedge x^j + b_{ij} y^i \wedge y^j + \sum_{i,j=1}^n c_{ij} x^i \wedge y^j.\]
+Then
+\[ \Lambda \alpha = \langle \Lambda \alpha, 1 \rangle = \langle \alpha, \omega \rangle = \sum_{i=1}^n c_{ii} = \sum_{i=1}^n \alpha(x_i,y_i),\]
+as desired. 
 \end{document}
