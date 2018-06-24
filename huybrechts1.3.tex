@@ -1,0 +1,60 @@
+\documentclass[10pt,letter]{article}
+\usepackage{amsmath,amssymb,breqn,enumitem,fullpage,graphicx,setspace,mathtools,pst-node,stmaryrd,tikz-cd}
+\onehalfspacing
+\usepackage{fullpage}
+
+\begin{document}
+\begin{center} 
+{\bf Huybrechts 1.3} \\
+Holly Mandel 01/14/2018
+\end{center}
+
+\paragraph*{1.3.1}
+It can be checked that for any $f$, \[ f^{\ast} dz_i = \frac{df}{dz_i}dz_i + \frac{df}{d\bar{z}_i} d\bar{z}_i \text{    and     }  f^{\ast} d\bar{z}_i = \frac{d\bar{f}}{dz_i}dz_i + \frac{d\bar{f}}{d\bar{z}_i} d\bar{z}_i.\]
+For instance, if $f = (u_1 + i v_1,...,u_n + i v_n)$,
+\begin{dmath*}
+f^{\ast} d\bar{z}_i = d(x_i \circ f) -  i \, d(y_i \circ f)
+= \frac{du_i}{dx_j} dx_j + \frac{du_i}{dy_j} dy_j - i \bigg( \frac{dv_i}{dx_j}dx_j + \frac{dv_i}{dy_j} dy_j \bigg) 
+= dx_j (\frac{du_i}{dx_j} - i\, \frac{dv_i}{dx_j}) + dy_j (\frac{du_i}{dy_j} -i \, \frac{dv_i}{dy_j})
+= \frac{d\bar{f}}{dx_j} dx_j - i \, \frac{d\bar{f}}{dy_j} dy_j,
+\end{dmath*} 
+while
+\begin{dmath*}
+\frac{d\bar{f}}{dz_i}dz_i + \frac{d\bar{f}}{d\bar{z}_i} d\bar{z}_i = \frac{1}{2}\bigg( \frac{d(u_i-iv_i)}{dx_j}-i\frac{d(u_i -iv_i)}{dy_j} \bigg) (dx_j + idy_j) + \frac{1}{2}\bigg( \frac{d(u_i-iv_i)}{dx_j}+i\frac{d(u_i -iv_i)}{dy_j} \bigg) (dx_j - idy_j)
+= \frac{d\bar{f}}{dx_j} dx_j - i \, \frac{d\bar{f}}{dy_j} dy_j.
+\end{dmath*} 
+
+Now if $f$ is holomorphic, $\frac{df}{d\bar{z}_i} = \frac{d\bar{f}}{dz_i} = 0$. Therefore 
+\[  f^{\ast} dz_{i_1} \wedge ... \wedge dz_{i_p} \wedge d\bar{z}_{j_1} \wedge ... \wedge d\bar{z}_{j_q} 
+= \sum_{l_1=1}^n ... \sum_{l_p=1}^n \sum_{m_1 = 1}^n  ... \sum_{m_q = 1}^n \frac{df^{i_1}}{dz_{l_1}} ... \frac{df^{i_p}}{dz_{l_p}} \frac{d\bar{f}^{j_1}}{d\bar{z}_{m_1}} ... \frac{d\bar{f}^{j_q}}{d\bar{z}_{m_q}} dz_{l_1} \wedge ... \wedge dz_{l_p} \wedge d\bar{z}_{m_1} \wedge ... \wedge d\bar{z}_{m_q}.\]
+The result follows by linearity. 
+\paragraph*{1.3.2} By Proposition 1.2.8, conjugation exchanges $\Lambda^{p,q} U$ and $\Lambda^{q,p} U$. Therefore $\Pi^{p+1,q}(\overline{\beta}) = \overline{\Pi^{p,q+1} \beta}$. Also, since $\frac{d\bar{f}}{d\bar{z}} = \overline{\frac{df}{dz}}$, it follows that $\overline{d\alpha} = d\overline{\alpha}$. Therefore
+\[ \overline{\delta \alpha} = \overline{\Pi^{p+1,q} \circ d \alpha}
+=  \Pi^{p,q+1} \overline { d \alpha}
+= \Pi^{p,q+1}   d \overline{\alpha}
+= \overline{\delta}\overline{\alpha} \] 
+
+Now say $\alpha = f dz \in \mathcal{A}^{1,0}(U)$ for $U$ an open neighborhood of a bounded disk $B_{\epsilon} \subseteq \mathbb{C}$. Then $\bar{\alpha} = \bar{f} d\bar{z} \in \mathcal{A}^{0,1}(U)$, so $\bar{\alpha} = \bar{\delta} g$ for $g$ as in Prop 1.3.7. But then $\overline{\delta \bar{g}} = \alpha$. So $\alpha$ is $\delta$-exact. 
+
+The same algebra gives equivalent statements for Prop. 1.3.8 and Corollary 1.3.9. 
+
+\paragraph*{1.3.3} Since $\alpha$ is $d$-closed, it is ${\delta}$-closed, so $\alpha = \delta \beta$ for some $\beta \in \mathcal{A}^{p+q-1}_{\mathbb{C}}(B)$. We can write
+\[ \beta = \sum_{k + l = p+q-1} \beta^{k,l} \ \ \beta^{k,l} \in \Lambda^{k,l}(B).\] But since $\alpha \in \Lambda^{p,q}(B)$, $d \beta = d(\beta^{p-1,q} + \beta^{p,q-1})$.
+
+Now by bidegree, $\bar{\delta} \beta^{p-1,q} = \delta(\beta^{p,q-1}) = 0$. Therefore we can write $\beta^{p-1,q} = \bar{\delta} \eta^{p-1,q}$ and $\beta^{p,q-1} = \delta \eta^{p,q-1}$. But then 
+\[ \delta \bar{\delta} (\eta^{p-1,q} - \eta^{p,q-1}) = \delta \bar{\delta}(\eta^{p-1,q}) + \bar{\delta} \delta(\eta^{p,q-1}) = \delta \beta^{p-1,q} + \bar{\delta} \beta^{p,q-1} = \alpha,\]
+as desired. 
+
+\paragraph*{1.3.4} This follows immediately from 1.3.3. 
+
+\paragraph*{1.3.5} This is a computation (omitted).
+
+\paragraph*{1.3.6} Omitted.
+
+\paragraph*{1.3.7} $\phi = \frac{i}{2\pi} \vert z \vert^2$. 
+
+\paragraph*{1.3.8} Such an $\omega$ satisfies the hypotheses of Proposition 1.3.2, where for each point $x$, $f$ is simply a translation of $0$ to $x$. Therefore, $d\omega = 0$. Since $\omega \in \mathcal{A}^{1,1}(U)$. Therefore the result follows from 1.3.3. 
+
+\paragraph*{1.3.9} The only such function if $f = 0$. For if $e^f g - \text{Id} = O(\vert z \vert^2)$ and $g = \text{Id} + \tilde{g}$ for $\tilde{g} = O(\vert z \vert)^2$, then
+\[ e^f(\text{Id} + \tilde{g}) - \text{Id} = O(\vert z \vert)^2.\] Since $\tilde{g}(0) = 0$, this implies that $e^f = 1$, so $f(0) = 0$. But this must hold at every point, so $f \equiv 0$. 
+\end{document}
