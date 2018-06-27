@@ -1,0 +1,24 @@
+\documentclass[10pt,letter]{article}
+\usepackage{amsmath,amssymb,breqn,enumitem,fullpage,graphicx,setspace,mathtools,pst-node,stmaryrd,tikz-cd}
+\onehalfspacing
+\usepackage{fullpage}
+
+\begin{document}
+\begin{center} 
+{\bf Huybrechts 2.1} \\
+Holly Mandel 06/25/2018
+\end{center}
+
+\paragraph*{2.1.3}
+\begin{itemize}
+\item The algebraic dimension of $\mathbb{P}^n$ is $n$. For consider the function $[x_0: .... : x_n] \mapsto x_i/x_0$ for $i = 1,...,n$. I claim that this is a rational function on $\mathbb{P}^n$. Consider any point $p = [p_0:...:p_n]$. If $p_0 \neq 0$ then $p \in U_0$ and on $U_0$, this function is represented by the obviously holomorphic coordinate function $x_i$. If $p_0 = 0$, then $p_j \neq 0$ for some $j > 0$, so $p \in U_j$, and $z_i/z_j$ and $z_0/z_j$ are well-defined on $U_j$ and $z_0/z_j$ is invertible. (If $i = j$, then $z_i/z_j = 1$, but the argument still goes through.) 
+
+These $n$ functions are algebraically independent. For say \[ F(x_1/x_0,...,x_n/x_0) = 0.\] Then $x_0^m F(x_1/x_0,...,x_n/x_0) = x_0^m G(x_0,x_1,...,x_n) = 0$ for some polynomial $G$ and some $m$. This implies that $G = 0$, so $F = 0$. 
+
+The result then follows from the upper bound of Proposition 2.1.9.
+ 
+\item The Weierstrass $p$ function is a nontrivial rational function on the torus. Therefore by Proposition 2.1.9, the algebraic dimension of $\mathbb{T}$ is $1$. 
+
+\item Proposition 2.1.9 does not apply to (non-compact) $\mathbb{C}$. In fact, $K(\mathbb{C})$ has infinite transcendence degree. For $K(\mathbb{C})$ contains the holomorphic functions on $\mathbb{C}$, and $e^{z^k}$ for $k \in \mathbb{N}$ is an algebraically independent set of holomorphic functions on $\mathbb{C}$. This can be seen by considering the asymptotics along the positive real axis. 
+\end{itemize}
+\end{document}
