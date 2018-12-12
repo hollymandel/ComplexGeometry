@@ -1,0 +1,44 @@
+\documentclass[10pt,letter]{article}
+\usepackage{amsmath,amssymb,graphicx,setspace,fullpage,breqn,mathtools,stmaryrd}
+\onehalfspacing
+\usepackage{fullpage}
+\DeclareMathOperator*{\argmin}{arg\,min}
+
+\begin{document}
+\noindent 
+December 2018
+\begin{center}
+\textbf{Chapter 2.3: Line Bundles and Divisors}\\ Huybrechts, \textit{Complex Geometry}
+
+\line(1,0){250}
+\end{center}
+\subparagraph{1} We assume $X$ is compact and connected. Consider the exact sequence
+\[ 0 \rightarrow \mathcal{O}^{\ast} \rightarrow \mathcal{M}^{\ast} \rightarrow \mathcal{M}^{\ast}/\mathcal{O}^{\ast} \rightarrow 0,\] where the first map is given by inclusion and the second by projection to the quotient.  The exact sequence in cohomology then gives the exact sequence
+\[ H^{0}(X,\mathcal{M}^{\ast}) \rightarrow H^{0}(X,\mathcal{M}^{\ast}/\mathcal{O}^{\ast}) \rightarrow_{\delta} H^{1}(X,\mathcal{O}^{\ast}).\]
+It is checked by diagram chasing that, under the isomorphisms $H^{0}(X,\mathcal{M}^{\ast}/\mathcal{O}^{\ast}) \simeq \text{Div}(X)$ and $H^{1}(X,\mathcal{O}^{\ast}) \simeq \text{Pic}(X)$, that $\delta$ is the canonical map of divisors to line bundles discussed in the chapter. Therefore this map has a nontrivial kernel exactly when the image of $H^{0}(X,\mathcal{M}^{\ast})$ under the map on sections induced by the inclusion is nontrivial. But it can be seen that the image of a meromorphic function under this map is zero if and only if the function is locally and therefore globally constant. But a nonzero meromorphic function is constant if and only if satisfies a polynomial relation over $\mathbb{C}^{\ast}$. 
+\subparagraph{2} First we note that $s$ is nonsingular on $Y$. This is because its vanishing locus is a smooth hypersurface, so by the definition of complex submanifold (GH pg. 20), $Y$ is locally given as the vanishing locus of a nondegenerate function $h$. But by the Nullstellensatz (pg. 11), this means that in some trivialization, $h$ and the coordinate representation of $s$ differ by a nonzero holomorphic function $g$. A calculation in coordinates then shows that over $Y$, \[ Ds = Dg h + g Dh =  g Dh.\]
+
+  Now take $p \in Y$. By the implicit function theorem, it is possible to choose a chart $(z_1,...,z_n)$ in a neighborhood $U$ of $p$ such that $Y \cap U$ corresponds to $\lbrace z_n = 0 \rbrace$. Choose a trivialization of $L$ over $U$ in the chosen coordinate system and let $s_U$ be the corresponding trivialization of $s$. I claim that $(z_1,...,z_n) \rightarrow (z_1,...,z_{n-1},s_{U}(z_1,...,z_n))$ is a diffeomorphism in a neighborhood of $p$. This follows because the derivative of $s_{U}$ is normal to $z_n = 0$ and nonzero, so the Jacobian at $p$ is invertible.
+  
+  Therefore we have a system of charts $(U_{\alpha},\rho_{\alpha})$ on $X$ such that if $U_{\alpha}$ intersects $Y$, the $z_n$ vanishes on $Y$ and such that there exists a trivialization $\phi_{\alpha}$ of $L$ over this chart such that $\sigma_{\alpha}(z_1,...,z_n) = z_n$. Then if $z' = (z_1',...,z_n')$ is another coordinate chart, $z_n'(z_1,...,z_{n-1},0)$ is identically zero and \[z_n'(z_1,...,z_{n-1},z_n) = \sigma_{\beta}(z_1,...,z_n) = g_{\beta \alpha} \sigma_{\alpha}(z_1,...,z_n).\] Therefore the transition function $F_{\alpha \beta}$ between any two such charts takes the form
+  \[ \left( \begin{array}{cc} \ast & \ast \\ 0 & g_{\alpha \beta } \end{array} \right).\]
+  Using the characterization of the normal bundle (HY pg. 68), this completes the proof. 
+\subparagraph{3} Let $f_1,...,f_k$ be the polynomials defining $X$. Fix $p \in X$ and choose a trivialization containing $p$. Near $p$ we can assume that $F = (z_1,...,z_{n-k},f_1(z),...,f_k(z))$ is local diffeomorphism. This gives a systen of charts such that the locus of $f_i$ is the $n-k+i$th hyperplane. Trivializations then take the form 
+\[ \left( \begin{array}{cc} \ast & \ast \\ 0 & D \end{array} \right),\]
+where $D$ is a diagonal matrix. Thus the normal bundle to the complete intersection is the direct sum of the normal bundles of each hypersurface.
+
+Now we have seen that a homogeneous polynomial of degree $d$ corresponds to a section of $\mathcal{O}(d)$. By the previous exercise, this yields that
+\[ \mathcal{N}_X = \oplus_{i=1}^k \mathcal{O}(d_k).\]
+
+\subparagraph{4} This is proven in Griffiths Harris. FINISH
+
+\subparagraph{5} Fix $n$ and $d$. By projective equivalence, it is enough to show that $\phi$ is an embedding at any $p \in \mathbb{P}^n$, that is, that $D\phi$ has maximum rank at any point. Pick $p \in U_0 \subset \mathbb{P}^n$, so $\phi(p) \in U_{x_0^d} \subset \mathbb{P}^N$.  In the standard coordinates on these charts, 
+\[ \phi(x_{1/0},...,x_{n/0}) = (\prod \limits_{i > 0} x_{i/0}^{d_i}).\]
+We require that $D\phi$ be rank $n$. But consider the monomial $x_0^{d-1} x_i$, which is $x_{i/0}$ is coordinates. In coordiantes, the derivative of this component is just $dx_{i/0}$. These clearly give $n$ independent columns, so $D\phi$ has rank $n$. 
+
+\subparagraph{6} The fiber of $p_1^\ast(L_1) \otimes p_2^\ast(L_2)$ over $x$ is $(L_1)_{p_1(x)} \otimes (L_2)_{p_2(x)}$, and the section $s_1^i \otimes s_2^j$ takes the value $s_1^i(p_1(x)) \otimes s_2^j(p_2(x))$. Therefore this statement follows from the fact that if $A$ and $B$ are vector spaces with bases $a_1,...,a_n$ and $b_1,...,b_m$, then $a_i \otimes b_j$ form a basis for $A \otimes B$. Recall that this is proven by defining a linear map $f: A \times B \rightarrow \mathbb{C}$ sending \[(\sum s_i a_i, \sum t_j b_j) \mapsto s_i t_j.\] This map factors through the tensor product to $\tilde{f}$. Therefore if $z = \sum c_{ij} a_i \otimes b_j = 0$,  $0 = \tilde{f}(z) = c_{ij}$. 
+
+\subparagraph{7} By projective equivalence, we can take $x = [1:0:...:0]$. Then the linear system is the span of $s_1,...,s_n$, so $\phi$ sends $[x_0:...:x_n]$ to $[x_1:...:x_n]$. This map is a projection of $\mathbb{P}^n$ onto a (projective) hyperplane. 
+
+
+\end{document}

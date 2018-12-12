@@ -1,0 +1,57 @@
+\documentclass[10pt,letter]{article}
+\usepackage{amsmath,amssymb,breqn,enumitem,fullpage,graphicx,setspace,mathtools,pst-node,stmaryrd,tikz-cd}
+\onehalfspacing
+\usepackage{fullpage}
+
+\begin{document}
+\begin{center} 
+{\bf Huybrechts 2.2} \\
+Holly Mandel 06/28/2018
+\end{center}
+\paragraph*{2.2.1}
+\begin{itemize}
+\item We can write \[ E \oplus F = \coprod_{p \in X} p \times ( E_p \oplus F_p).\] If $\lbrace (U_i, \psi_i) \rbrace$ and $\lbrace (U_i, \psi'_i) \rbrace$ are local trivializations for $E$ and $F$ respectively, then a system of local trivializations is given by $\lbrace (U_i,\psi_i \oplus \psi'_i) \rbrace$. Then it is easily computed that transition functions are given by $\psi_j \psi_i^{-1} \oplus \psi'_j (\psi_i')^{-1}$. 
+\item The same argument as in the previous bullet goes through, since $\psi_j \otimes \psi'_j \circ (\psi_i \otimes \psi'_i)^{-1} = \psi_j \psi_i^{-1} \otimes \psi'_j (\psi_i')^{-1}$. 
+\item We can write \[ E^{\ast} = \coprod_{p \in X} p \times E_p^{\ast}.\] Then local triviailizations for $E^{\ast}$ are given by $(U_i, (\psi_i^{-1})^{\ast})$. But \[ (\psi_j^{-1})^{\ast} \circ ((\psi_i^{-1})^{\ast})^{-1} = ((\psi_j \circ \psi_i^{-1})^{\ast})^{-1}.\] 
+\item In the notation above, a local trivialization for $\text{Det } E$ is given by $(\psi_i)_{\ast}$. Therefore transition functions are given by \[ (\psi_j)_{\ast} \circ ((\psi_i)_{\ast})^{-1} = (\psi_j \circ \psi_i^{-1})_{\ast} = \text{Det}(\psi_j \psi_i^{-1}).\] 
+\end{itemize}
+
+\paragraph*{2.2.2} We have the exact sequence \[ 0 \rightarrow L \rightarrow_{\alpha} E \rightarrow_{\beta} F \rightarrow 0.\] Since a short exact sequence of vector spaces splits, we have that $E = L \oplus F$, so there is a natural map $f: F \hookrightarrow E$. Therefore we can define $A: L \otimes \Lambda^{i-1}F \rightarrow \Lambda^i E$ as $\alpha \otimes \Lambda^{i-1} f$. Define $B = \Lambda^i \beta$. I claim that
+ \[ 0 \rightarrow L \otimes \Lambda^{i-1}F \rightarrow_{A} \Lambda^{i} E \rightarrow_{B} \Lambda^i F \rightarrow 0\] is exact. Certainly $\text{Im }A \subseteq \text{Ker }B$ and $B$ is surjective. It is also easily seen that $A$ is injective, since if $l_1,...,l_n$ is a basis for $L$ and $f_1,...,f_m$ is a basis for $F$, then $l_{n_1} \otimes (f_{n_2} \wedge ... \wedge f_{n_i})$ is a basis for $L \otimes \Lambda^{i-1}F$, and these vectors are linearly independent on $\Lambda^i E$. That $\text{Ker }B \subseteq \text{Im }A$ then follows from dimension-counting: if $\vert F \vert = n$, the identity is
+ \[ \binom{n+1}{i} = \binom{n}{i-1} + \binom{n}{i}.\] 
+
+\paragraph*{2.2.3} If $\alpha_p \in \Lambda^k E_p$ and $\beta_p \in \Lambda^{r-k} E_p$, then $\alpha_p \wedge \beta_p \in \Lambda^r E_p = \text{det}(E)$. No choice of basis is required because $E_p$ and its exterior powers are defined as vector spaces prior to the choice of local trivialization. To show that the pairing is nondegenerate, consider the fact that for each basis element $e_{i_1} \wedge ... \wedge e_{i_k}$ of $\Lambda^k E_p$, there is a unique basis element $e_{j_1} \wedge ... \wedge e_{j_{r-k}}$ of $\Lambda^{r-k} E_p$ such that $e_{i_1} \wedge ... \wedge e_{i_k} \wedge e_{j_1} \wedge ... \wedge e_{j_{r-k}}  \neq 0$. 
+
+The desired identity then follows from tensoring with $\Lambda^{r-k} E^{\ast}$ and applying the canonical isomorphism $\Lambda^i E \otimes \Lambda^i E^{\ast} \simeq \mathbb{C}$. 
+
+\paragraph*{2.2.4} The homomorphism clearly exists pointwise. That is it smooth and a vector bundle homomorphism, and the injectivity statement, can be seen in coordinates, since the representation of $f \otimes \text{id}_G$ is block diagonal. 
+
+\paragraph*{2.2.5} Let $X$ be a compact complex connected manifold and let $L$ be a line bundle. On the one hand, say $\sigma: X \rightarrow L$ and $\tau: X \rightarrow L^{\ast}$ are nontrivial global sections. Then we have the global section $\sigma \otimes \tau$ of $L \otimes L^{\ast} \simeq \mathcal{O}$ that assigns to $p$ the vector $\sigma(p) \otimes \tau(p)$. But there is a natural isomorphism $L \otimes L^{\ast} \simeq \mathbb{C}$ sending $(v,w) \mapsto w(v)$. Under this isomorphism, $\sigma \otimes \tau$ goes to a holomorphic function $f: p \mapsto [\tau(p)](\sigma(p))$. Since $X$ is compact, this function is constant. Now since both $\tau$ and $\sigma$ are holomorphic, they are given in coordinates by holomorphic functions, and the coordinate representation of $[\tau(p)](\sigma(p))$ is the product of the coordinate representations. But the product of two nonzero holomorphic functions is not zero, for instance by the Nullstellensatz (Proposition 1.1.29). Therefore $f = c$ for $c \neq 0$. Therefore $\sigma$ is a nonvanishing global section of $L$. Since such a nonvanishing global defines a global trivialization, this implies that $L$ is the trivial bundle.
+
+Conversely, if $L \simeq X \times \mathbb{C}$, then the map $p \mapsto (p,1)$ is a nontrivial global section of $L$ and its obvious dual is a nontrivial global section of $L^{\ast}$. 
+
+\paragraph*{2.2.6} It is enough to prove the section extends uniquely over all open sets $U$ that give slice charts (in the sense of Definition 2.1.16) and such that $L\vert_U$ is trivial, since such open sets form a base for the toplogy of $X$. 
+
+Say first that $k = n-2$. I claim that every section $X \setminus Y \rightarrow L\vert_{X\setminus Y}$ over $Y \cap U$ extends uniquely to a section $X \rightarrow L$ over $U$. This follows from Exercise 1.1.20 because after trivializing, such a section is equivalent to a map from $X \setminus Y \cap U$ to $\mathbb{C}$. For general $k$, a section of $X \setminus Y \cap U$ restricts to a unique section of $X\setminus \mathbb{C}^{n-2} \cap U$, so the result follows from the $k = n-2$ case. 
+
+
+\paragraph*{2.2.7} Let $(U_i,\phi^1_i)$ be a system of local trivializations for $L_1$ and $(U_i, \phi^2_i)$ for $L_2$. We can assume that the local trivializations exist over the same cover by taking a common refinement. A bundle isomorphism is given by a collection of locally-defined holomorphic functions $\lbrace \psi_i: U_i \times \mathbb{C} \rightarrow U_i \times \mathbb{C} \rbrace$ over local trivializations $U_i$ of both $L_1$ and $L_2$ that commute with the transition functions on overlaps:
+\[ \psi_i \phi_i^1 (\phi_j^1)^{-1} = \phi_i^2 (\phi_j^2)^{-1} \psi_j \ \ \ \text{ on } \ \ \ U_i \cap U_j.\] 
+
+By the argument outlined in Question 2.2.6, over each $U_i$ the map $U_i \setminus Y \times \mathbb{C} \rightarrow U_i \setminus Y \times \mathbb{C}$ extends to $U_i \times \mathbb{C}$. VERIFY COCYCLE THING
+
+\paragraph*{2.2.8}   We have seen that a coordinate $z_i$ defines a nontrivial global section of $\mathcal{O}(1)$ by the map
+\[ [z_0:...:z_n] \mapsto \bigg( [z_0:...:z_n],\bigg( (\lambda z_0,...,\lambda z_n) \mapsto \lambda z_i \bigg) \bigg).\]
+Let's call this map $Z_i$. Then we associate $z_0^{a_0} \cdot ... \cdot z_n^{a_n}$ with the map $Z_0^{a_0} \otimes ... \otimes Z_n^{a_n}$. Finally, to any homogeneous polynomial of degree $k$, we associate to $f(z_0,...,z_n) = \sum \alpha_i z_0^{a^i_0} \cdot ... \cdot z_n^{a^i_n}$ the map $\sum \alpha_i Z_0^{a_0} \otimes ... \otimes Z_n^{a_n}$. Concretely, this section is written 
+\[ [z_0:...:z_n] \mapsto \bigg( [z_0:...:z_n], \bigg( ( \lambda z_0,...,\lambda z_n) \mapsto \sum \alpha_i (\lambda z_0)^{a_0} \cdot ... \cdot (\lambda z_n)^{a_n} \bigg) \bigg).\]
+To see that this section is nontrivial, take a point $(p_0,...,p_n)$ such that $f(p_0,...,p_n) \neq 0$. Then if we write $v^{\ast}$ for the ``value'' of the section at $[p_0:...:p_n]$, then $v^{\ast}(p_0,...,p_n) = f(p_0,...,p_n) \neq 0$.
+
+\paragraph*{2.2.9} We define a map $F: \mathbb{C}^{n+1} \setminus 0 \rightarrow  \mathcal{O}(-1) \setminus s(\mathbb{P}^n)$ by 
+\[ F(x) = (x,\ell(x)), \]
+where $\ell(x)$ is the unique line in $\mathbb{C}^{n+1}$ that contains $x$. This map is clearly bijective. Composing with the projection $\pi:  \mathcal{O}(-1) \rightarrow \mathbb{P}^n$ gives the map $\ell(x)$. 
+
+Restricting $\ell$ to $\mathbb{S}^{2n+1}$ gives a map $S^{2n+1} \rightarrow \mathbb{P}^n$, and a computation in coordinates shows that it is a submersion. To see that the fiber is isomorphic to $S^1$, note that each line can be parameterized $\lbrace \lambda y: \lambda \in \mathbb{C} \rbrace$ for some $y \in \mathbb{C}^{n+1} \setminus 0$ with $\vert y \vert = 1$, so the intersection with $\mathbb{S}^{2n+1}$ is parameterized as $\lbrace e^{i\theta} y \rbrace$.
+
+
+
+\end{document}
