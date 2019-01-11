@@ -1,0 +1,74 @@
+\documentclass[10pt,letter]{article}
+\usepackage{amsmath,amssymb,graphicx,setspace,fullpage,breqn,mathtools,stmaryrd}
+\onehalfspacing
+\usepackage{fullpage}
+\DeclareMathOperator*{\argmin}{arg\,min}
+
+\begin{document}
+\noindent 
+January 2019
+\begin{center}
+\textbf{Chapter 2.4: Projective Space}\\ Huybrechts, \textit{Complex Geometry}
+
+\line(1,0){250}
+\end{center}
+\subparagraph{2.4.1} This is shown by induction on Proposition 2.4.7. The case $k = 1$ is given by Corollary 2.4.9. For the inductive step, we note that $M_k = Z(f_1) \cap ... \cap Z(f_k)$ is a hypersurface of degree $d_k$ of the projective manifold $M_{k-1} = Z(f_1) \cap ... \cap Z(f_{k-1})$. This is because $f_k$ gives a section of $\mathcal{O}(d_k)\vert_{Z(f_1) \cap ... \cap Z(f_{k-1})}$. Therefore
+\begin{align*} K_{M_k} &\simeq (K_{M_{k-1}} \otimes \mathcal{O}(d_k)\vert_{M_{k-1}})\vert_{M_k}   \\ 
+&\simeq (\mathcal{O}(\sum_{j=1}^{k-1} d_j) \vert_{M_{k-1}} \otimes \mathcal{O}(d_k)\vert_{M_{k-1}})\vert_{M_k}  \\ 
+&\simeq \mathcal{O}(\sum_{j=1}^k d_j-(n+1))\vert_{M_k}.
+\end{align*}
+\subparagraph{2.4.2} We have the Euler sequence \[ 0 \rightarrow \mathcal{O} \rightarrow \oplus_{i=0}^n \mathcal{O}(1) \rightarrow \mathcal{T}_{\mathbb{P}^n} \rightarrow 0.\] 
+The first map is given by 
+\[ \lambda \mapsto (\lambda X_0,...,\lambda X_n).\]
+The second map is given by
+\[ (f_0(X_0,...,X_n),...,f_n(X_0,...,X_n)) \mapsto \sum_{i=0}^n f_i(X_0,...,X_n) D_i,\] where $D_i$ is the image of $\partial_i$ under the projection $\pi: \mathbb{C}^{n+1}\setminus 0 \rightarrow \mathbb{P}^n$. It is verified that at each point the kernel of $D\pi$ is the image of the first map, so the image of $(f_0(X_0,...,X_n),...,f_n(X_0,...,X_n))$ vanishes only if it is in this image. Since each $f_i$ is a homogenous polynomial, this can only occur either if the point is in the image on all of $\mathbb{C}^{n+1}$, or if all the polynomials vanish at a point. By linear algebra, this means that for any $n$ linear forms that are independent and such that $\langle f_1,...,f_n \rangle + \text{Im}$ spans, there is a vector field on $\mathbb{P}^n$ that vanishes only at the point corresponding to the line that is the kernel of the $f_i$. So such vector fields exist and each only vanishes at one point. CLEAN UP.
+ 
+\subparagraph{2.4.3} \begin{enumerate}
+\item By Corollary 2.4.9, $K_X \simeq \mathcal{O}(-1)$, which has no global sections. Therefore by the same reasoning as Corollary 2.4.6, $\text{kod}(\mathbb{P}^n) = -\infty$. 
+\item In this case $K_x \simeq \mathcal{O}$. Observing the group law on $\mathcal{R}(X)$, we see that $\mathcal{R}(X) \simeq \mathbb{C}[x]$. Therefore $\mathcal{Q}(X)$ has transcendence degree $1$, so $\text{kod}(\mathbb{P}^n) = 0$.
+\item See (1).
+\item In this case $K_x \simeq \mathcal{O}(1)$, so $H^0(X,K_x)$ is the collection of linear forms in $n+1$ variables, so $\mathcal{R}(X) \simeq \mathbb{C}[x_0,...,x_n]$. Therefore $\text{kod}(\mathbb{P}^n) = n$.
+\end{enumerate}
+
+\subparagraph{2.4.4}
+First I claim that a holomorphic $p$-form induces a holomorphic top form an a $p$-dimensional complex submanifold. For let $\omega \in \Omega^p$ and let $M \subseteq X$ be such a submanifold and let $i$ be the inclusion map. Then \[ \bar{\partial} i^{\ast} \omega = i^{\ast} \bar{\partial} \omega = 0.\]
+
+Now I claim that for $p > 0$, if $\omega$ is nonzero, there exists a $p$-dimensional complete intersection such that $i^{\ast} \omega \neq 0$. By the identity principle, $\omega$ does not vanish on any open subset of $\mathbb{P}^n$, so we can write in the coordinates on $U_0$  ($Z_{i/0} = X_i/X_0$) \[ \omega = \sum \alpha_{i_1,...,i_p} dZ_{i_1/0} \wedge ... \wedge dZ_{i_p/0}.\]
+with at least one $\alpha_{i_1,...,i_p} \neq 0$. Choosing such an $\alpha$, we let $M$ be the projective submanifold $\mathbb{P}(\langle X_0,X_{i_1},...,X_{i_p} \rangle) = Z(X_{j_1}) \cap ... \cap Z(X_{j_{n-p}})$. In the coordinates on $M \cap U_0$, \[ i^{\ast} \omega = \alpha_{i_1,...,i_p} dZ_{i_1/0} \wedge ... \wedge dZ_{i_p/0} \neq 0,\] as desired. 
+
+This proves that $H^{0}(\mathbb{P}^n,\Omega^p) = 0$ for all $p > 0$. For by Exercise 2.4.1, $K_M \simeq \mathcal{O}((n-p)-(n+1))$, so it has no global sections. 
+
+\subparagraph{2.4.5} I claim that there is a vector bundle isomorphism \[ \mathcal{O}_{\mathbb{P}^1} \oplus \mathcal{O}_{\mathbb{P}^1}(n) \simeq Z(x_0^n y_1 - x_1^n y_2) \subset \mathbb{P}^1 \times \mathbb{C}^3.\] It will follow that the projectivization of these two vector bundles are isomorphic. But for each $X = [x_0:x_1] \in \mathbb{P}^1$, the projectivization of the fiber over $X$ is the projective subspace given by the same polynomial. NEEDS MORE ELABORATION. ACTUALLY GIVE AN ISO. 
+
+To prove the isomorphism suffices to show that these bundles have the same transition functions. Since $Z_0^n$ defines a global section of $\mathcal{O}_{\mathbb{P}^1}(n)$, we can compute the transition functions as the ratio of the coordinate representations of this section (Prop 2.3.8). With respect to the standard charts $(U_i)$, we have that \[ \rho_{ij} = (Z_0^n/Z_i^n)/(Z_0^n/Z_j^n) = Z_j^n/Z_i^n.\] Therefore the transition functions on  $\mathcal{O}_{\mathbb{P}^1} \oplus \mathcal{O}_{\mathbb{P}^1}(n)$ are 
+\[ r_{ij} = 1 \oplus (Z_j/Z_i)^n.\]  WHAT COORDINATES IS THIS IN?
+
+On the other hand, over the chart $U_0 \subset \mathbb{P}^1$, the hypersurface is parameterized by
+\[ (x,s,t) \mapsto ((1,x),(s,tx^n,t)),\]
+while over $U_1$ it is parameterized by
+\[ (y,u,v) \mapsto ((y,1),(y,v,y^nv)).\]
+Thus $u(x,s,t) = s$ and $v(x,s,t) = tx^n$, so
+\[ r'_{01} = 1 \oplus (Z_1/Z_0)^n.\] 
+This proves that the two bundles have the same transition functions. 
+
+\subparagraph{2.4.6} The tangent and contangent bundle of a direct product is the direct sum of the tangent and cotangent bundles. 
+
+$K(\mathbb{P}^n \otimes \mathbb{P}^m) \simeq K(\mathbb{P}^n) \otimes K(\mathbb{P}^m) \simeq \mathcal{O}(-(n+m+2)).$
+
+\subparagraph{2.4.7} Am I missing something here? This should just be all collections of $n+m-2$ polynomials such that the intersection is nonsingular and the total degree is $n+m+2$.
+
+\subparagraph{2.4.8} \begin{enumerate}
+\item 
+\end{enumerate} 
+% This follows from the Dolbeault isomorphism 
+%\[ H^{0}(M,\Omega^p) \simeq H^{p,0}_{\bar{\partial}}(M),\]
+%as well as the fact that the hodge star gives an isomorphism 
+%\[ H^{p,0}_{\bar{\partial}}(M) \simeq H^{n-p,n}_{\bar{\partial}}(M) \simeq 0,\]
+%since all $
+%
+%%The $\bar{\partial}$ Poincare lemma gives the exact sequence for each $q > 0$. 
+%%\[ 0 \rightarrow \Omega_{\mathbb{P}^n}^{q-1} \rightarrow \mathcal{A}^{q-1} \rightarrow \Omega_{\mathbb{P}^n}^{q-1} \rightarrow 0.\]
+%Here $\Omega_{\mathbb{P}^n}^{0} \simeq \mathbb{C}$ and $\mathcal{A}^0 = C^{\infty}(\mathbb{P}^n)$. 
+%Now the first map is the inclusion and the second map is $\bar{\partial}$. Now for $q > 0$, $\mathcal{A}^{q}$ is a fine sheaf, so by the long exact sequence in cohomology we have that 
+%\[ H^{n}(\mathbb{P}^n,\Omega_{\mathbb{P}^n}^{q-1}) \simeq H^{n-1}(\mathbb{P}^n,\Omega_{\mathbb{P}^n}^{q}).\]
+\end{document}

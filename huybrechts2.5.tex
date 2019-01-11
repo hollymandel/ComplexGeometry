@@ -1,0 +1,24 @@
+\documentclass[10pt,letter]{article}
+\usepackage{amsmath,amssymb,graphicx,setspace,fullpage,breqn,mathtools,stmaryrd}
+\onehalfspacing
+\usepackage{fullpage}
+\DeclareMathOperator*{\argmin}{arg\,min}
+
+\begin{document}
+\noindent 
+January 2019
+\begin{center}
+\textbf{Chapter 2.5: Blow-ups}\\ Huybrechts, \textit{Complex Geometry}
+
+\line(1,0){250}
+\end{center}
+\subparagraph{2.5.1} (See the first answer to https://math.stackexchange.com/questions/245965/pull-back-of-sections-of-vector-bundles for a useful discussion of pullbacks of sections. After you draw all the diagrams, you find that $f^{\ast} \sigma = (y \mapsto \sigma(f(y)) \in f^{\ast}E)$. Apply this {\it away from the exceptional divisor.})
+
+Here is how to define the map. Take $\alpha \in H^0(X,K_x)$. Let $\sigma$ be the blow-up map, so $\sigma\vert_{\hat{X}\setminus E}$ is an isomorphism $\hat{X}\setminus E \simeq X \setminus \lbrace x \rbrace$. Now $ a\vert_{\hat{X}\setminus E} \circ \sigma\vert_{\hat{X}\setminus E}$ defines a section $\hat{X}\setminus E \rightarrow K_{\hat{X}\setminus E}$, because $K_{\hat{X}\setminus E} \simeq K_X$. To show that this section extends across the exceptional divisor $E$, it is sufficient to show that it is bounded in some local trivialization at each point in $E$ (Riemann Extension Theorem Prop 1.17).   But this follows because $\alpha$ is ``bounded'' on $X$ and $\sigma$ gives a surjection onto $\hat{X} \setminus E$. $\alpha$ is bounded in the sense that there are finitely many trivializations of $X$ and $\alpha$ is bounded in each of these trivializations. This follows because $X$ is compact, so we can cover it in compact sets contained in trivializations. Clearly the extension over $E$ must be unique. 
+
+This map is injective because if $\alpha \circ \sigma$ extends to the zero section, it must be zero on $X \setminus \lbrace x \rbrace$, in which case it is zero. It is surjective because a section $\beta: \hat{X} \rightarrow K_{\hat{X}}$ induces a section of $X \setminus \lbrace x \rbrace$ by restriction and the isomorphism $\hat{X}\setminus E \simeq X \setminus \lbrace x \rbrace$. This then extends to $\beta': \hat{X}\setminus E \rightarrow K_{\hat{X}\setminus E}$ by the process described above, which agrees with $\beta$ away from $E$. The uniqueness of the extension then proves $\beta = \beta'$. 
+
+\subparagraph{2.5.2] 
+
+%Take $(\ell,0) \in E$ and where $\ell = (\ell_1, \ell_2)$. Assume $\ell_1 \neq 0$. Then $(\ell,0)$ is contained in the chart $U_0 \times \mathbb{C}^2 \cap \mathcal{O}(-1)$, which is parameterized by $(x,\lambda) \mapsto ((1,x),(\lambda, \lambda x))$. Then in these coordinates $\alpha \circ \sigma(x,\lambda) = \alpha(\lambda, \lambda x)
+\end{document}
