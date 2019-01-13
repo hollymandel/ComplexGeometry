@@ -1,0 +1,27 @@
+\documentclass[10pt,letter]{article}
+\usepackage{amsmath,amssymb,graphicx,setspace,fullpage,breqn,mathtools,stmaryrd}
+\onehalfspacing
+\usepackage{fullpage}
+\DeclareMathOperator*{\argmin}{arg\,min}
+
+\begin{document}
+\noindent 
+January 2019
+\begin{center}
+\textbf{Chapter 2.6: Differential Calculus on Complex Manifolds}\\ Huybrechts, \textit{Complex Geometry}
+
+\line(1,0){250}
+\end{center}
+
+\subparagraph{2.6.1} Let $(M,I)$ be an almost-complex manifold and say $(U,\phi)$ and $(V,\psi)$ are two systems of charts (complex structures) on $M$ inducing the same almost-complex structure. Take charts $\phi$ and $\psi$ trivializing overlapping neighborhood of $M$. I claim that $\phi \circ\psi^{-1}$ is holomorphic. This is equivalent to the statement that $D(\phi \circ \psi^{-1})$ is $\mathbb{C}$-linear. But for any tangent vector $v$,
+\[ D(\phi \circ \psi^{-1})Iv = D\phi \circ D\psi^{-1} Iv =  D\phi (I D\psi^{-1} v) = I D \phi( D\psi^{-1}v) = I D(\phi \circ \psi^{-1})v.\]
+This is because both coordinate charts are holomorphic with respect to $I$.
+
+\subparagraph{2.6.2} Let $S$ be a surface and $\langle \cdot, \cdot \rangle$ the metric on $S$. Let $(U_i,\phi_i)$ be a system of oriented trivializations. As described in Example 1.2.12, there is a unique almost complex structure on each $\phi_i(U_i)$ such that $\langle v, Iv \rangle = 0$, $\Vert I(v) \Vert = \Vert v \Vert$, and $v, I(v)$ is positively oriented. Since each of these three conditions is preserved by oriented isometries, these local choices of $I$ glue to a unique almost complex structure on $S$. But $I$ must be integrable, for the complex dimension of the tangent space to $S$ is $1$, so $\mathcal{A}^{0,2}(X)= 0$ (Prop.2.6.15). Therefore it follows from Newlander-Neirenberg that the resulting almost complex structure is complex.
+
+\subparagraph{2.6.3} The natural complex structure on $\mathbb{P}^1$ is the one given in each of the standard coordinate charts by multiplying by $i$. Call this $J$. It can be checked that for the charts $U_i \subseteq \mathbb{P}^1, i = 0,1$, the flat metric on $\mathbb{C} \simeq U_i$ is conformal to the Fubini-Study metric. Therefore $J$ satisfies $\langle v, Jv \rangle_{FS}$ and $\Vert Jv \Vert_{FS} = \Vert v \Vert_{FS}$, and $\lbrace v, Jv \rbrace$ is positively oriented. So this is the same complex structure as given in the previous exercise. 
+%The natural complex structure on $\mathbb{P}^1$ is the one corresponding to the standard charts. 
+%Now the Fubini-Study metric $\mathbb{P}^1$ is given on $U_0$ by $\frac{i}{2\pi}\partial \bar{\partial} \log (1+\vert x \vert^2)$, where $(1:z) \in U_0$.  
+
+\subparagraph{2.6.5} The $\bar{\partial}$-Poincare lemma on the star-shaped set $M = \mathbb{C}^n$ implies that $H^{0,1}_{\bar{\partial}}(M) = 0$. Now a hypersurface $H$ defines an element of $H^1(M,\Omega^0)$ as follows: locally, $H$ is the vanishing set of $f_{\alpha}$ defined on an open set $U_{\alpha}$. Given the overlap $U_{\alpha \beta}$ of two such charts, the ratio $f_{\alpha}/f_{\beta}$ defines a Cech $1$-cocycle $(U_{\alpha \beta}, g_{\alpha \beta})$.  The question is then whether $g_{\alpha \beta}$ is the boundary of $(U_{\alpha},h\vert_{U_{\alpha}})$ for a global holomorphic function $h$, that is, whether $(U_{\alpha \beta}, g_{\alpha \beta})$ is zero in $H^1(M,\Omega^0)$. But we have seen that $H^1(M,\Omega^0) \simeq H^{0,1}_{\bar{\partial}}(M) = 0$. 
+\end{document}
