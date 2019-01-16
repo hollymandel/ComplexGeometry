@@ -1,0 +1,45 @@
+\documentclass[10pt,letter]{article}
+\usepackage{amsmath,amssymb,graphicx,setspace,fullpage,breqn,mathtools,stmaryrd}
+\onehalfspacing
+\usepackage{fullpage}
+\DeclareMathOperator*{\argmin}{arg\,min}
+
+\begin{document}
+\noindent 
+January 2019
+\begin{center}
+\textbf{Chapter 3.1: Kahler Identities}\\ Huybrechts, \textit{Complex Geometry}
+
+\line(1,0){250}
+\end{center}
+
+\subparagraph{3.1.1} This is a reflection of the fact that Hermitian metrics are not required to be holomorphic. For let $M$ be a complex manifold and take any coordinate chart $U \subset \mathbb{C}^n$. On $U$, the complex structure of $M$ is as described in Section 1.3. The flat metric $g_U$ is compatible with this complex structure. 
+
+Now cover $M$ be charts $U_{\alpha}$ and let $\rho_{\alpha}$ be a partition of unity subordinate to this cover. Then $g = \sum_{\alpha} \rho_{\alpha} g_{U_{\alpha}}$ is the desired metric:
+\[ g(I\cdot, I\cdot) = \sum_{\alpha} \rho_{\alpha} g_{U_{\alpha}}(I\cdot, I\cdot) = \sum_{\alpha}  \rho_{\alpha} g_{U_{\alpha}}(\cdot, \cdot) = g(\cdot,\cdot).\]  
+
+\subparagraph{3.1.2}Because $g$ is Kahler, $dg = 0$. But say \[ dg' = d(e^{f}) g + e^f dg = d(e^f) g = 0.\]
+Because $X$ is connected, this implies that $f$ is constant. 
+
+\subparagraph{3.1.3} Say a function $f$ is $d$-harmonic. By degree, $d^{\ast}f = 0$, so 
+\[ \langle \Delta_d f,f \rangle = \langle d^{\ast}d f, f \rangle = \Vert df \Vert^2 = 0.\]
+Therefore $df = 0$, which implies that $\partial f = \bar{\partial} f = 0$. The same trick shows that if $\Delta_{\partial}f = \partial^{\ast} \partial f = 0$, then $\partial f = 0$, and if $\Delta_{\bar{\partial}}f = \bar{\partial}^{\ast} \partial f = 0$, then $\bar{\partial} f = 0$, so $df = 0$, and therefore $\Delta f = 0$.
+
+Similar arguments work for top forms, since in this case $d^{\ast}d f = 0$ and similar.
+
+\subparagraph{3.1.4} Computation omitted (should be in my papers from class).
+
+\subparagraph{3.1.5} This is easily seen using the coordinate representation on page 117 and the observation that, e.g. in $U_0$, $i^{\ast} dz_i = dz_i$ for $0 < i < n$ and $i^{\ast} dz_n = 0$. 
+
+\subparagraph{3.1.6} Let $\pi: \mathbb{C}^{n+1}\setminus \lbrace 0 \rbrace \rightarrow \mathbb{P}^n$. Then $F_A^{\ast} \omega_{FS} = \omega_{FS}$ if and only if $A^{\ast} \pi^{\ast} \omega_{FS} = \pi^{\ast} \omega_{FS}$, where $A$ is the ordinary linear action of $A$ on $\mathbb{C}^{n+1}$. This is because $\pi \circ A = F_A \circ \pi$, so $A^{\ast} \pi^{\ast} \omega_{FS} = \pi^{\ast} F_A^{\ast} \omega_{FS}$. Also, $\pi$ is a subjective submersion, so $\pi^{\ast}$ is injective on forms on $\mathbb{P}^n$: if $\omega \neq 0 \in \Omega_{\mathbb{P}^n}$, then $\omega_{F(p)}(DF_p -, DF_p -)$ must be nonzero for some $p \in \mathbb{C}^{n+1}\setminus \lbrace 0 \rbrace$ because there is some $F(p)$ where $\omega$ does not vanish, and then vectors on which it does not vanish can be ``reached'' by $DF_p$. 
+
+Now we calculated on pg. 118 that $\pi^{\ast} \omega_{FS}= \frac{i}{2\pi} \partial \bar{\partial} \log \Vert z \Vert^2$. Since $A$ is a holomorphic function, it commutes with $\partial$ and $\bar{\partial}$. Therefore \[ A^{\ast}  \pi^{\ast} \omega_{FS} =  \frac{i}{2\pi} \partial \bar{\partial} \log \Vert Az \Vert^2.\]
+
+When does $\partial \bar{\partial} \log \Vert Az \Vert^2 = \partial \bar{\partial} \log \Vert z \Vert^2$? We compute that
+\[ \partial \bar{\partial}\log \Vert Az \Vert^2 = \sum_{i,j} \frac{A_{ik}\bar{A}_{jk} dz_i \wedge d\bar{z}_j}{\Vert Az \Vert^2} + \mathcal{O}(\Vert Az \Vert^{-2}).\]
+But scaling $A$ does change $\partial \bar{\partial} \log \Vert Az \Vert^2$, so we can ignore the $\mathcal{O}(\Vert Az \Vert^{-2})$ term. Then comparing terms with the case $A = I$, we see that we must have $A^HA = \lambda \delta_{ij}$. This $A$ must be a multiple of a unitary matrix. 
+
+I believe that it is an error for the book to say that $A$ must be unitary. For $A$ and $\lambda A$ define the same map on $\mathbb{P}^{n+1}$ for $\lambda \neq 0$. 
+
+
+\end{document}
