@@ -41,5 +41,28 @@ But scaling $A$ does change $\partial \bar{\partial} \log \Vert Az \Vert^2$, so 
 
 I believe that it is an error for the book to say that $A$ must be unitary. For $A$ and $\lambda A$ define the same map on $\mathbb{P}^{n+1}$ for $\lambda \neq 0$. 
 
+\subparagraph{3.1.7} First, I claim that $L$, $d$ and $d^{\ast}$ determine $d^c$. For 
+\[ \lbrack d^{\ast},L \rbrack =  \lbrack \bar{\partial}^{\ast} + \partial^{\ast},L \rbrack = i(\partial - \bar{\partial}) = -d^c.\]
 
+Now I claim that $d^c$ determines the bidegree decomposition of $\mathcal{A}^{\ast}(X)$, and therefore the complex structure, since the eigendecomposition of a diagonalizable operator determines the operator. For let $\omega$ be any form of pure type $(p,q)$. Then \[ d^c \omega = I^{-1} \circ d \circ I(\omega) = I^{-1} (-i)^{p-q} (\partial\omega + \bar{\partial}{\omega}) = (-i)^{p-q-(p+1-q)}\partial\omega  + (-i)^{p-q-(p-q-1)}\bar{\partial}\omega.\]
+Therefore \[ \partial \omega = (2i)^{-1}(d^c\omega - i d \omega).\] A similar computation allows us to compute $\bar\partial \omega$. 
+
+Since all degree-$1$ covectors are realized as linear combinations of $\partial$ and $\bar \partial$ of coordinate functions, this proves that we have determined the way $I$ acts on $\mathcal{A}^1(X)$, which determines how it acts on the tangent bundle. 
+
+\subparagraph{3.1.8} Also in my class papers.
+\subparagraph{3.1.9} Let $\alpha$ and $\beta$ be two forms. We compute
+\begin{align*}
+\langle \alpha, i\partial \beta \rangle
+\langle -i \partial^{\ast} \alpha, \beta \rangle \\ &= \langle\lbrack \Lambda, \bar{\partial} \rbrack \alpha, \beta \rangle \\ 
+&= \langle \Lambda \bar{\partial} \alpha - \bar{\partial} \Lambda  \alpha, \beta \rangle \\
+&= \langle  \alpha, \bar {\partial}^{\ast} L  \beta -   L \bar {\partial}^{\ast}   \beta   \rangle \\
+&= \langle \alpha, \lbrack  \bar{\partial}^{\ast},L \rbrack  \beta \rangle.
+\end{align*} 
+The other computation is similar. 
+
+\subparagraph{3.1.10} The Kahler form on $X \times Y$ is $\pi_{X}^{\ast} \omega_X + \pi_{Y}^{\ast}\omega_Y$. The compatibility, closedness, etc. are easily verified.
+
+\subparagraph{3.1.13} The Kahler form is also sympectic. It can be seen that $\omega^n$ is nondegenerate for example by Proposition 1.3.12, since there is a coordinate representation around any point at which \[ \omega^n = C\cdot dz_1 \wedge d\bar{z}_1 \wedge ... \wedge dz_n \wedge d\bar{z}_n.\] 
+
+However, the space of symplectic forms is not a cone. For if $n$ is odd, both $\omega$ and $-\omega$ are symplectic forms, but $\omega^n + -\omega^n = 0$. This cannot happen with Kahler forms because the negative of a Kahler form is not a Kahler form, since the corresponding bilinear form would be negative definite.
 \end{document}
