@@ -1,0 +1,57 @@
+\documentclass[10pt,letter]{article}
+\usepackage{amsmath,amssymb,graphicx,setspace,fullpage,breqn,mathtools,stmaryrd}
+\onehalfspacing
+\usepackage{fullpage}
+\DeclareMathOperator*{\argmin}{arg\,min}
+
+\begin{document}
+\noindent 
+January 2019
+\begin{center}
+\textbf{Chapter 3.2: Hodge Theory on Kahler Manifolds}\\ Huybrechts, \textit{Complex Geometry}
+
+\line(1,0){250}
+\end{center}
+
+\subparagraph{3.2.1} The Kahler form $\omega$ can be written as $L(1)$, where $1$ is the function identically equal to $1$ on $X$. Now by Proposition 3.1.12,
+\[ \Delta L (1) = L \Delta (1) = 0.\] 
+\subparagraph{3.2.2} From the remark we have the map $F: \mathcal{H}^{p,q}(X) \rightarrow \mathcal{H}^{n-q,n-p}(X)^{\ast}$, given as follows. Let $\alpha$ be an element of $H^{p,q}(X)$. Then $F(\alpha)$ is the linear map $\beta \mapsto \int_X \alpha \wedge \beta$. As discussed in the remark this map is injective (here we use the Hermitian structure). It is then surjective by dimension, since the Hodge star gives $\mathcal{H}^{p,q}(X,g) \simeq \mathcal{H}^{n-q,n-p}(X,g)$. 
+
+Now for a Kahler manifold we have the isomorphism $\mathcal{H}^{p,q}_{\bar{\partial}}(X,g) \simeq \mathcal{H}^{p,q}_{d}(X,g) \simeq H^{p,q}(X)$, which completes the proof.
+
+\subparagraph{3.2.3} Can't think of much to write for this one!
+
+\subparagraph{3.2.6} By Corollary 3.2.12, on a Kahler manifold we have
+\[ h^k(X) = \sum_{r = 0}^k h^{k,k-r}(X).\]
+But by complex conjugation, $h^{k,k-r}(X) = h^{k-r,k}(X)$. Thus is $k$ is odd,
+\[ h^k(X) = 2\sum_{r = 0}^{\frac{k-1}{2}} h^{k,k-r}(X), \]
+so $h^k(X)$ is even. 
+  
+\subparagraph{3.2.7} Let $X$ be a Hopf surface. Then $X$ is diffeomorphic to $S^1 \times S^3$, so $H^1(X,\mathbb{C})$ has dimension $1$. However, by the previous exercise, $H^1(K,\mathbb{C})$ must have even dimension. 
+
+\subparagraph{3.2.8} Let $X$ be a compact Kahler manifold and fix a Kahler metric. Now if $\alpha$ is a $\bar{\delta}$-closed form on $X$, then it is $\Delta_{\bar{\delta}}$-harmonic. For $H^0(X,\Omega^p_X) = H^{p,0}(X)$ is a subgroup of $\mathcal{A}^{p,0}$. But since $X$ is compact, by Theorem 3.2.8 we have that \[ \mathcal{A}^{p,0} = \mathcal{H}^{p,0}_{\bar{\delta}}(X,g) \oplus \bar{\delta}^{\ast} \mathcal{A}^{p,1}(X), \]
+so we can write $\alpha = \alpha_1 + \alpha_2$ for $\alpha_1$ $\bar{\delta}$-harmonic and $\alpha_2 = \bar{\delta}^{\ast}\beta$ for some $\beta \in \mathcal{A}^{p,1}(X)$. Now $\bar{\delta}\alpha_1 = 0$ by Lemma 3.2.5. Therefore $\bar{\delta}\alpha = 0$ implies that $\alpha_2 = 0$, for as in the proof of Corollary 3.2.9, $\bar{\delta}\alpha_2 = 0$ implies that
+\[ 0 = \langle \bar{\delta}\bar{\delta}^{\ast} \beta,\beta \rangle = \langle \bar{\delta}^{\ast}\beta, \bar{\delta}^{\ast}\beta \rangle.\] 
+Therefore $\alpha = \alpha_1 \in \mathcal{H}^{p,0}_{\bar{\delta}}(X,g)$. But since $X$ is Kahler, by Proposition 3.1.12 this implies that $\alpha$ is harmonic. This computation did not depend on the choice of Kahler metric. 
+
+\subparagraph{3.2.9} This is correct. First we establish that the ``$\partial^{\ast}\bar{\partial}^{\ast}$-lemma'' follows from the $\partial \bar{\partial}$ lemma. For say $\beta$ is a pure form of type $(p,q)$ and $d^\ast \beta = 0$. Then $d \ast \beta = 0$ since $\ast$ is injective. Therefore by the usual lemma, $\ast \beta$ is $d$ exact if and only if it is $\partial \bar{\partial}$ exact. But $\ast \beta = d \gamma$ if and only if $\beta = d^{\ast} (\ast \gamma)$, and similarly $\ast \beta = \partial \bar{\partial} \eta$ if and only if $\beta = \pm \partial^{\ast} \bar{\partial}^{\ast} (\ast \eta)$. Thus $\beta$ is $d^{\ast}$ exact if and only if it is $\partial^{\ast} \bar{\partial}^{\ast}$ exact.  
+
+Now by the Riemannian Hodge decomposition, $\alpha \in \mathcal{A}^{p,q}(X) \subseteq \mathcal{A}^{p+q}(X)$ can be written
+\[ \alpha = d\alpha_1 + \alpha_2 + d^{\ast} \alpha_3.\]
+Since the decomposition is direct, each component must be of pure type $(p,q)$. Therefore by the $\partial \bar{\partial}$ lemma and its corrolary of the previous paragraph, we can write
+\[ \alpha = \partial \bar{\partial} \tilde{\alpha}_1 + \alpha_2 + \partial^{\ast} \bar \partial^{\ast} \tilde{\alpha}_3.\]
+
+This proves the first part of Theorem 3.2.8; the second part is similar.
+
+\subparagraph{3.2.10} We have seen that 
+\[ \langle \Delta_{d} \alpha, \alpha \rangle = \Vert d\alpha \Vert^2 + \Vert d^{\ast}\alpha \Vert^2.\]
+But by the orthogonality of the decompositions in Theorem 3.2.8,
+\[ \Vert d\alpha \Vert^2 = \Vert \partial \alpha \Vert^2 + \Vert \bar{\partial} \alpha \Vert^2\] and 
+\[ \Vert d^{\ast}\alpha \Vert^2 = \Vert \partial^{\ast} \alpha \Vert^2 + \Vert \bar{\partial}^{\ast} \alpha \Vert^2.\]
+Thus $\Delta_{d} \alpha = 0$ implies that $\partial \alpha = \bar{\partial} \alpha = 0$, which implies that $\Delta_{\partial}\alpha = 0$. The argument is similar for $\bar{\partial}$.
+
+\subparagraph{3.2.13} If $\alpha = d^c \beta$ for $\alpha \in \mathcal{A}^{p,q}$, then $\alpha$ is orthogonal to the space of harmonic forms. By the proof of Corollary 3.2.10, this implies that $\alpha = \partial \bar{\partial} \gamma$ for some $\gamma \in \mathcal{A}^{p-1,q-1}$. But $d d^c = 2i \partial \bar{\partial}$.  
+
+\subparagraph{3.2.16} This is simply the $\partial \bar{\partial}$ lemma applied to the exact form $\omega - \omega'$. We can choose $f$ real because $\omega - \omega'$ is purely imaginary. ELABORATE. 
+
+\end{document}
