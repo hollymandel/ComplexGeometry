@@ -1,0 +1,67 @@
+\documentclass[10pt,letter]{article}
+\usepackage{amsmath,amssymb,graphicx,setspace,fullpage,breqn,mathtools,stmaryrd}
+\onehalfspacing
+\usepackage{fullpage}
+\DeclareMathOperator*{\argmin}{arg\,min}
+
+\begin{document}
+\noindent 
+February 2019
+\begin{center}
+\textbf{Chapter 4.2: Connections}\\ Huybrechts, \textit{Complex Geometry}
+
+\line(1,0){250}
+\end{center}
+
+\subparagraph{4.2.1} \begin{enumerate}
+\item We can always define a connection on a complex vector bundle $E \rightarrow M$. For if $(U_{\alpha},\phi_{\alpha})$ is a locally finite collection of local trivializations of $E$, there exists a smooth partition of unity subordinate to $(U_{\alpha})$. Under this trivialization, a section is just a map $U_{\alpha} \rightarrow \mathbb{C}^{n}$, so we can apply $d$ to each component. Call this map $\nabla_\alpha$. Then if $s = (s^1,...,s^n)$ is a section of $U_{\alpha}$ in these coordinates,
+\[ \nabla_{\alpha}(f \cdot s) = (d(fs^1),d(fs^2),...,d(fs^n)) = (d(f) s^1 + f d(s^1),...,d(f) s^n + f d(s^n)) = d(f)s + f\nabla_{\alpha}(s),\]
+so $\nabla_{\alpha}$ is a connection on $U_{\alpha}$. Then if we define $\nabla = \sum f_{\alpha} \nabla_{\alpha}$, $\nabla$ is a connection, for if $s$ is a section, then we can evaluate the locally finite sum:
+\[ \nabla(fs) = \sum f_{\alpha} \nabla_{\alpha}(fs) = \sum f_{\alpha} \nabla_{\alpha}(fs) = \sum f_{\alpha} d(f)s + f\nabla_{\alpha}(s) = d(f)s + f\nabla(s).\]
+
+Now say $E \rightarrow M$ is a Hermitian vector bundle. IF $\sigma^1,...\sigma^n$ are local sections of $E$ such that $\sigma^1(p),...,\sigma^n(p)$ form a basis, then locally we can orthogonalize them with respect to the Hermitian metric. Therefore we can cover $E$ with trivializations so that the Hermitian metric is represented by the identity matrix on each trivialization. With respect to such a trivialization, $d$ as defined above is a Hermitian connection: 
+\[ d(H(\sum_{i=1} \alpha_i e_i, \sum_{j=1}^n \beta_j e_j)) = d(\sum_{i=1}^n \alpha_i \beta_j) = \sum_{i=1} d(\alpha_i) \beta_i +  \alpha_i d(\beta_i) = H(d(\sum_{i=1}^n \alpha_i e_i),\sum_{j=1}^n \beta_j e_j)+ H(\sum_{i=1}^n \alpha_i e_i,d(\sum_{j=1}^n \beta_j e_j)).\] 
+The same partition of unity argument as above extends these local Hermitian connections to a global Hermitian connection. 
+\item Say that $[\nabla-\nabla'](s) = 0$ for all $s \in \Gamma(M,\mathcal{A}^0(E))$. We claim that  $[\nabla-\nabla'](t) = 0$ for all $t \in \Gamma(U,\mathcal{A}^0(E))$ for any open $U \subset M$. For say otherwise that $[\nabla-\nabla'](t)$ is nonzero at $p \in U$. Since $U$ is open, we can take a smooth function $f$ that is supported in $U$ and nonvanishing at $p$. Then $f \cdot t$ gives a global section whose restriction to $U$ is nonzero. But by Proposition 4.2.3, 
+\[ 0 = [\nabla-\nabla'](f \cdot t) = f \cdot [\nabla-\nabla'](t).\]
+This contradiction shows that there is no such $p$. 
+\end{enumerate}
+
+\paragraph*{4.2.2} 
+\begin{enumerate} 
+\item Take $s = (s_1,s_2) \in E_1 \oplus E_2$. Then
+\[ ((\nabla_1 + a_1)s_1,(\nabla_1 + a_1)s_2) = \nabla s + (a_1 s_1,a_2 s_2)
+=  \nabla s + a(s)\] 
+where $a = a_1 \oplus a_2 \in \mathcal{A}^1 (\text{End}(E_1) \oplus \text{End}(E_2)) \simeq \mathcal{A}^1(\text{End}(E_1)) \oplus \mathcal{A}^1(\text{End}(E_1))$. 
+\item $(\nabla_1 + a_1)s_1 \otimes (\nabla_1 + a_1)s_2 = \nabla s + (a_1 \otimes \text{Id} + \text{Id} \otimes a_2)s.$
+\item For any $f \in \text{Hom}(E_1,E_2)$ and $s$ a section of $E_1$,
+ \[ (\nabla_2 + a_2)f(s) - f((\nabla_1 - a_1)s) =  \nabla(f) s + a_2 f(s) - f(a_1(s)).\] 
+\paragraph*{4.2.3} Let $s_i$ and $t_i$ be a local sections of $E_i$. Then
+\begin{dmath*}
+d(h_1(s_1,t_1) + h_2(s_2,t_2)) = d(h_1(s_1,t_1)) + d(h_2(s_2,t_2))
+= h_1(\nabla_1(s_1),t_1) + h_1(s_1,\nabla_1(t_1)) + h_2(\nabla_1(s_2),t_2) + h_2(s_2,\nabla_2(t_2))
+= (h_1 + h_2)(\nabla (s_1,s_2),(t_1,t_2)) + (h_1 + h_2)( (s_1,s_2),\nabla(t_1,t_2))
+\end{dmath*}
+while
+\[ \pi^{0,1} (\nabla_1(s_1) + \nabla_2(s_2)) = \pi^{0,1}(\nabla_1(s_1)) + \pi^{0,1}(\nabla_2(s_2))
+= \bar{\partial}(s_1 + s_2).\]
+
+The remaining computations are omitted.
+\paragraph*{4.2.4}  Let $e_1,...,e_n$ be local nonvanishing holomorphic sections of $E$ such that $h(e_i,e_j) = \delta_{ij}$. Locally $\nabla = d + A$ for a matrix of $1$-forms $A = (A_{ij})$. Now if $\nabla$ is Hermitian, we have that
+\[ 0 = d(h(e_i,e_j)) = h(Ae_i,e_j) + h(e_i,Ae_j) = A_{ij} + \overline{A_{ji}}.\]
+\end{enumerate}
+Therefore $A^h = -A$. Now assume that $\nabla$ is compatible with the holomorphic structure. We compute
+\begin{dmath*}
+\pi^{0,1}((d+A)(e_i)) =( \sum_j (\bar{\partial}_j e_i) dz_j) e_i + \pi^{0,1}(A_{ij}) e_j
+= \pi^{0,1}(A_ij) e_j
+= 0,
+\end{dmath*}
+where the last equality follows because $\pi^{0,1}(\nabla e_j) = \bar{\partial}(e_j) = 0$, since $e_j$ is a holomorphic trivialization of $E$. Therefore $A_{ij} \in \mathcal{A}^{1,0}(U)$ for all $i,j$. But $\overline{\mathcal{A}^{1,0}(U)} = \mathcal{A}^{0,1}(U)$. So if $\nabla$ is the Chern connection, then $A = 0$. 
+\paragraph*{4.2.5} The induced connections are hermitian (computation omitted). The second fundamental form is zero, because it is given as 
+\[ \text{pr}_{E/E_i} \circ \text{p}_{E_i} \circ \nabla,\]
+and the composition of the two projections is zero. 
+\paragraph*{4.2.6} The determinant bundle is simply the $n$th tensor power of $E$, so the connection is just the connection applied to each factor:
+\[ \nabla(e_1 \otimes ... \otimes e_n) = \nabla(e_1) \otimes e_2 \otimes ... \otimes e_n + ... + e_1 \otimes ... \otimes e_{n-1} \otimes \nabla(e_n).\] 
+It can be checked that the same formula as the tensor product defines a connection on $\Lambda^2(E)$. I think the idea here is that if $F \subset E$ is a subbundle such that $\nabla(\mathcal{A}^0(F)) \subseteq \mathcal{A}^1(F)$, the connection descends to the quotient. 
+\paragraph*{4.2.7} 
+\end{document}

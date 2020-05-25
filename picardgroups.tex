@@ -1,0 +1,37 @@
+\documentclass[10pt,letter]{article}
+\usepackage{amsmath,amssymb,graphicx,setspace,fullpage,breqn,mathtools,stmaryrd,tikz-cd}
+\onehalfspacing
+\usepackage{fullpage}
+\DeclareMathOperator*{\argmin}{arg\,min}
+
+\begin{document}
+\noindent 
+\begin{center}
+\textbf{Some Picard Groups} \\
+\line(1,0){250}
+\end{center}
+\begin{enumerate}
+\item {$\mathbb{P}^n$}: Recall that $\text{Pic}(X) \simeq H^{1}(X,\mathcal{O}^{\ast})$.  We know from algebraic topology that $H^k(\mathbb{P}^n,M) = M$ for $k$ even and $0$ otherwise, $M \in \lbrace \mathbb{Z}, \mathbb{Q}, \mathbb{C} \rbrace$.  Therefore the exponential sheaf sequence
+\[ H^{1}(\mathbb{P}^n,\mathcal{O}) \rightarrow H^{1}(\mathbb{P}^n,\mathcal{O}^{\ast}) \rightarrow H^2(\mathbb{P}^n,\mathbb{Z})\] shows that $\text{Pic}(X) = \mathbb{Z}$ and that projective line bundles are determined by their image in $H^2(\mathbb{P}^n,\mathbb{Z})$, which is the first Chern class. 
+\item {\bf Hypersurfaces in $\mathbb{P}^n$, $n \geq 4$}: . By Chow's theorem, a projective hypersurface is cut out by a section of $\mathcal{O}(d)$ for $d > 0$. Therefore we can apply the Lefschetz hyperplane theorem (GH pg 156) to find that \[ H^1(X,\mathcal{O}) \simeq H^1(X,\mathbb{C}) \simeq H^1(\mathbb{P}^n,\mathcal{O}) = 0,\]
+and (because $\text{dim}(X) \geq 3$),
+ \[ H^2(X,\mathcal{O}) \simeq H^2(X,\mathbb{C}) \simeq H^2(\mathbb{P}^n,\mathcal{O}) = 0.\]
+Therefore using the exponential sequence over $X$ we have that $\text{Pic}(X) \simeq H^2(X,\mathbb{Z})$. But the Lefschetz hyperplane theorem, which is true for integer cohomology, gives that $\mathbb{Z} \simeq  H^2(\mathbb{P}^n,\mathbb{Z}) \simeq H^2(X,\mathbb{Z})$. Therefore $\text{Pic}(X)  \simeq \mathbb{Z}$.
+\item {\bf Complete intersection of $k$ hypersurfaces in $\mathbb{P}^n$, $n \geq 3+k$}: We claim that $\text{Pic}(X) \simeq \mathbb{Z}$. The proof proceeds by induction with the first case being the previous bullet. Let $F_k$ be the polynomial of degree $d_k$ defining $S_k$, the $k$th hypersurface. Let $X^{j} = S_1 \cap ... \cap S_{j}$. The requirement that the intersection be complete guarantees that $X^k$ is a smooth hypersurface of $X^{k-1}$. Therefore by Lefschetz and an inductive hypothesis $H^i(X^k,\mathcal{O}) \simeq H^i(X^{k-1},\mathcal{O}) \simeq 0$ for $i = 1,2$ and $H^2(X^{k-1},\mathbb{Z}) \simeq \mathbb{Z}$, so be the exponential sequence and Lefschetz again, $H^2(X^{k},\mathbb{Z}) \simeq \mathbb{Z}$ and $\text{Pic}(X) \simeq H^2(X^{k},\mathbb{Z})$. 
+%THIS IS WRONG
+%On the other hand, by the naturality of the boundary operator, the following diagram (GH pg 139) commutes:
+%\begin{center}
+%\begin{tikzcd}
+%H^1(\mathbb{P}^n,\mathcal{O}^{\ast}) \arrow[r] \arrow[d, "i^{\ast}"]
+%& H^2(\mathbb{P}^n,\mathbb{Z}) \arrow[d, "i^{\ast}"] \\
+%H^1(X,\mathcal{O}^{\ast}) \arrow[r]
+%& H^2(X,\mathbb{Z})
+%\end{tikzcd}
+%\end{center}
+%The map $H^1(\mathbb{P}^n,\mathcal{O}^{\ast}) \rightarrow H^2(\mathbb{P}^n,\mathbb{Z})$ is injective because $H^1(\mathbb{P}^n,\mathcal{O}) = 0$, while the pullback of Cech cohomology is easily seen to be injective. Therefore $\text{Pic}(\mathbb{P}^n) \hookrightarrow \text{Pic}(X)$. This proves that $\text{Pic}(X) \simeq \mathbb{Z}$. 
+\item $H^2(X,\mathcal{O}) = 0$ if the hypersurface is dimension 2? 
+\item Curves - especially elliptic ones! This seems cool.
+
+\end{enumerate} 
+
+\end{document}
